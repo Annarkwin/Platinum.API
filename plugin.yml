@@ -1,0 +1,5 @@
+name: PlatinumAPI
+main: com.gmail.Annarkwin.Platinum.API.API
+version: 1.0
+api-version: 1.16
+load: STARTUP
