@@ -56,11 +56,22 @@ public class RegisterAPIEvents implements Listener
 
 		}
 
-		else if (e.getAction() == Action.PHYSICAL && e.getClickedBlock().getType() == Material.FARMLAND)
+		else if (e.getAction() == Action.PHYSICAL)
 		{
 
-			event = new PlayerTrampleEvent(e);
-			Bukkit.getServer().getPluginManager().callEvent(event);
+			if (e.getClickedBlock().getType() == Material.FARMLAND)
+			{
+
+				event = new PlayerTrampleEvent(e);
+				Bukkit.getServer().getPluginManager().callEvent(event);
+				
+			}
+			else {
+
+				event = new PlayerBlockStepEvent(e);
+				Bukkit.getServer().getPluginManager().callEvent(event);
+				
+			}
 
 		}
 
