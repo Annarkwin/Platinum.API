@@ -1,23 +1,38 @@
 package com.gmail.Annarkwin.Platinum.API;
 
-public class Coordinate {
+public class Coordinate
+{
+
 	private int x, y, z;
-	
-	public Coordinate (int ix, int iy, int iz) {
+
+	public Coordinate( int ix, int iy, int iz )
+	{
+
 		x = ix;
 		y = iy;
 		z = iz;
+
 	}
-	
-	public int getX() {
+
+	public int getX()
+	{
+
 		return x;
+
 	}
-	
-	public int getY() {
+
+	public int getY()
+	{
+
 		return y;
+
 	}
-	
-	public int getZ() {
+
+	public int getZ()
+	{
+
 		return z;
+
 	}
+
 }

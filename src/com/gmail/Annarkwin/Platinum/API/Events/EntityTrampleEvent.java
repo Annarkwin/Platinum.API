@@ -7,42 +7,65 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.entity.EntityInteractEvent;
 
-public class EntityTrampleEvent extends Event implements Cancellable {
+public class EntityTrampleEvent extends Event implements Cancellable
+{
 
 	private Block block;
 	private Entity entity;
 	private boolean cancelled = false;
-	
-	public EntityTrampleEvent(EntityInteractEvent event) {
+
+	public EntityTrampleEvent( EntityInteractEvent event )
+	{
+
 		block = event.getBlock();
 		entity = event.getEntity();
+
 	}
-	
+
 	private static final HandlerList handlers = new HandlerList();
-		
-	public HandlerList getHandlers() {
-	    return handlers;
+
+	public HandlerList getHandlers()
+	{
+
+		return handlers;
+
 	}
 
-	public static HandlerList getHandlerList() {
-	    return handlers;
+	public static HandlerList getHandlerList()
+	{
+
+		return handlers;
+
 	}
-	
-	public Block getBlock() {
+
+	public Block getBlock()
+	{
+
 		return block;
+
 	}
-	
-	public Entity getEntity() {
+
+	public Entity getEntity()
+	{
+
 		return entity;
+
 	}
 
 	@Override
-	public boolean isCancelled() {
+	public boolean isCancelled()
+	{
+
 		return cancelled;
+
 	}
 
 	@Override
-	public void setCancelled(boolean cancel) {
-		cancelled = cancel;		
+	public void setCancelled( boolean cancel )
+	{
+
+		cancelled = cancel;
+
 	}
+
 }

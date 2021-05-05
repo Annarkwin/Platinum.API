@@ -9,59 +9,90 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class PlayerRightClickBlockEvent extends Event implements Cancellable {
+public class PlayerRightClickBlockEvent extends Event implements Cancellable
+{
 
 	private Block block;
 	private BlockFace face;
 	private Player player;
 	private ItemStack item;
 	private boolean cancelled = false;
-	
-	public PlayerRightClickBlockEvent(PlayerInteractEvent event) {
+
+	public PlayerRightClickBlockEvent( PlayerInteractEvent event )
+	{
+
 		block = event.getClickedBlock();
 		face = event.getBlockFace();
 		player = event.getPlayer();
 		item = event.getItem();
+
 	}
-	
+
 	private static final HandlerList handlers = new HandlerList();
-		
-	public HandlerList getHandlers() {
-	    return handlers;
+
+	public HandlerList getHandlers()
+	{
+
+		return handlers;
+
 	}
 
-	public static HandlerList getHandlerList() {
-	    return handlers;
+	public static HandlerList getHandlerList()
+	{
+
+		return handlers;
+
 	}
-	
-	public BlockFace getBlockFace() {
+
+	public BlockFace getBlockFace()
+	{
+
 		return face;
+
 	}
-	
-	public Block getBlock() {
+
+	public Block getBlock()
+	{
+
 		return block;
+
 	}
-	
-	public Player getPlayer() {
+
+	public Player getPlayer()
+	{
+
 		return player;
+
 	}
-	
-	public boolean hasItem() {
+
+	public boolean hasItem()
+	{
+
 		return (item != null);
+
 	}
-	
-	public ItemStack getItem() {
+
+	public ItemStack getItem()
+	{
+
 		return item;
+
 	}
 
 	@Override
-	public boolean isCancelled() {
+	public boolean isCancelled()
+	{
+
 		return cancelled;
+
 	}
 
 	@Override
-	public void setCancelled(boolean cancel) {
-		cancelled = cancel;		
+	public void setCancelled( boolean cancel )
+	{
+
+		cancelled = cancel;
+
 	}
 
 }

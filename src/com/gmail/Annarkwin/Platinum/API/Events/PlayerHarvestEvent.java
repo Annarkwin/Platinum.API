@@ -8,51 +8,76 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.block.BlockBreakEvent;
 
-public class PlayerHarvestEvent extends Event implements Cancellable {
+public class PlayerHarvestEvent extends Event implements Cancellable
+{
 
-	//TODO get adjusted drops with enchants - allow to set drops
-	
+	// TODO get adjusted drops with enchants - allow to set drops
+
 	private Block block;
 	private Material type;
 	private Player player;
 	private boolean cancelled = false;
-	
-	public PlayerHarvestEvent(BlockBreakEvent event) {
+
+	public PlayerHarvestEvent( BlockBreakEvent event )
+	{
+
 		block = event.getBlock();
 		type = block.getType();
 		player = event.getPlayer();
+
 	}
-	
+
 	private static final HandlerList handlers = new HandlerList();
-		
-	public HandlerList getHandlers() {
-		
-	    return handlers;
+
+	public HandlerList getHandlers()
+	{
+
+		return handlers;
+
 	}
 
-	public static HandlerList getHandlerList() {
-	    return handlers;
+	public static HandlerList getHandlerList()
+	{
+
+		return handlers;
+
 	}
-	
-	public Block getBlock() {
+
+	public Block getBlock()
+	{
+
 		return block;
+
 	}
-	
-	public Material getBlockType() {
+
+	public Material getBlockType()
+	{
+
 		return type;
+
 	}
-	
-	public Player getPlayer() {
+
+	public Player getPlayer()
+	{
+
 		return player;
+
 	}
 
 	@Override
-	public boolean isCancelled() {
+	public boolean isCancelled()
+	{
+
 		return cancelled;
+
 	}
 
 	@Override
-	public void setCancelled(boolean cancel) {
-		cancelled = cancel;		
+	public void setCancelled( boolean cancel )
+	{
+
+		cancelled = cancel;
+
 	}
+
 }
