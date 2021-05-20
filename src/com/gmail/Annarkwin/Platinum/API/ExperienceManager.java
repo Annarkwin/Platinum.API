@@ -1,39 +1,22 @@
 package com.gmail.Annarkwin.Platinum.API;
 
+import org.bukkit.entity.Player;
+
 public abstract class ExperienceManager
 {
 
-	public static int getTotalExp( int level, float barpercent, int next )
+	// Get total experience player has based on leveling formulas
+	public static int getTotalExperience( Player p )
 	{
 
-		return getLevelExp(level) + getBarExp(barpercent, next);
-
-	}
-
-	public static int getLevelExp( int level )
-	{
-
+		int level = p.getLevel();
+		int exp = (int) (p.getExp() * p.getExpToLevel());
 		if (level <= 16)
-		{
-
-			return (level * level + 6 * level);
-
-		}
-		else if (level >= 17 && level <= 31)
-		{
-
-			return (int) (2.5 * level * level - 40.5 * level + 360);
-
-		}
+			return level * level + 6 * level + exp;
+		else if (level <= 31)
+			return (int) (2.5 * level * level - 40.5 * level + 360) + exp;
 		else
-			return (int) (4.5 * level * level - 162.5 * level + 2220);
-
-	}
-
-	public static int getBarExp( float barpercent, int next )
-	{
-
-		return (int) barpercent * next;
+			return (int) (4.5 * level * level - 162.5 * level + 2220) + exp;
 
 	}
 

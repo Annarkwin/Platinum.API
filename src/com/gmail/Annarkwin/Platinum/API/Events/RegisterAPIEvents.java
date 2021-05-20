@@ -64,13 +64,14 @@ public class RegisterAPIEvents implements Listener
 
 				event = new PlayerTrampleEvent(e);
 				Bukkit.getServer().getPluginManager().callEvent(event);
-				
+
 			}
-			else {
+			else
+			{
 
 				event = new PlayerBlockStepEvent(e);
 				Bukkit.getServer().getPluginManager().callEvent(event);
-				
+
 			}
 
 		}
