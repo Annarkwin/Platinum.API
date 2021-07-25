@@ -5,8 +5,8 @@ import org.bukkit.command.CommandSender;
 public interface HelpCommand
 {
 
-	public String[] getHelpEntries( CommandSender sender, MainCommand command );
+	public String[] getHelpEntries( CommandSender sender, PlatinumCommand command );
 
-	public String getHelpString( Subcommand command );
+	public String getHelpString( PlatinumCommand command );
 
 }
