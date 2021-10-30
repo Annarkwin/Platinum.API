@@ -4,7 +4,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-
 public abstract class PlatinumMainCommand extends PlatinumCommand implements CommandExecutor
 {
 
@@ -23,6 +22,5 @@ public abstract class PlatinumMainCommand extends PlatinumCommand implements Com
 		return run(arg0, this.name, arg3);
 
 	}
-
 
 }
